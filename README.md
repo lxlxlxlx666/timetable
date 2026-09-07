@@ -29,6 +29,24 @@
 
 `app/` 目录完全自包含，传到任意静态托管即可（GitHub Pages / Netlify / Vercel / Cloudflare Pages 均可）。HTTPS 下会自动启用 Service Worker 离线缓存。
 
+### 本项目线上地址（GitHub Pages）
+
+本课表已部署到：
+
+**https://lxlxlxlx666.github.io/timetable/**
+
+（GitHub Pages 大陆访问不稳定，时好时坏；若需要国内同学稳定访问，可另部署到 Cloudflare Pages 等平台。）
+
+**更新线上课表**（改动 `app/` 数据或界面后）：
+
+```bash
+bash scripts/deploy-github.sh     # 需已登录 gh（gh auth status 检查）
+```
+
+推送后 GitHub Pages 约 30~60 秒完成构建，刷新页面即见新版（页面资源采用"网络优先"策略，部署后无需清缓存）。
+
+### 手动部署到任意静态托管
+
 以 GitHub Pages 为例：把 `app/` 内所有文件放到仓库根目录的 `docs/` 或独立仓库根，开启 Pages 即可。
 
 ## 目录结构
