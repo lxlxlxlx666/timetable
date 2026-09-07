@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f2a43">
+<title>李翔课表</title>
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./icon-192.png">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="title">
+    <h1 id="titleName">课表</h1>
+    <span class="sub" id="semester"></span>
+  </div>
+  <div class="weekctl">
+    <button class="navbtn" id="prevWeek" aria-label="上一周">‹</button>
+    <div class="weekinfo">
+      <div class="weeknum"><span id="curWeek">第1周</span><span id="weekTotal"></span></div>
+      <div class="daterange" id="dateRange"></div>
+    </div>
+    <button class="navbtn" id="nextWeek" aria-label="下一周">›</button>
+  </div>
+  <div class="statusrow">
+    <span id="todayStatus"></span>
+    <button class="pill hidden" id="backToday">回到本周</button>
+    <button class="pill" id="openSettings" title="设置">⚙ 设置</button>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="grid-scroll" id="scroll">
+    <div class="grid" id="grid"></div>
+  </div>
+  <p class="hint" id="hint"></p>
+</main>
+
+<footer class="foot">
+  <div class="legend" id="legend"></div>
+  <div class="footnote" id="footnote"></div>
+</footer>
+
+<!-- 课程详情 -->
+<div class="overlay hidden" id="detailOverlay">
+  <div class="sheet" id="detailSheet" role="dialog" aria-modal="true">
+    <button class="closebtn" id="closeDetail" aria-label="关闭">✕</button>
+    <h2 id="dName"></h2>
+    <div class="dmeta" id="dMeta"></div>
+    <div class="drow"><span class="dlabel">教师</span><span class="dvalue"><span id="dTeacher"></span> <button class="mini" id="editTeacher">✎ 校对</button></span></div>
+    <div class="drow"><span class="dlabel">地点</span><span class="dvalue" id="dLoc"></span></div>
+    <div class="drow"><span class="dlabel">校区</span><span class="dvalue" id="dCampus"></span></div>
+    <details class="rawdetails">
+      <summary>教务系统原始字段</summary>
+      <pre id="dRaw"></pre>
+    </details>
+  </div>
+</div>
+
+<!-- 设置 -->
+<div class="overlay hidden" id="settingsOverlay">
+  <div class="sheet" id="settingsSheet" role="dialog" aria-modal="true">
+    <button class="closebtn" id="closeSettings" aria-label="关闭">✕</button>
+    <h2>设置</h2>
+    <label class="frow">开学第1周（周一）
+      <input type="date" id="setWeek1">
+    </label>
+    <label class="frow">本学期总周数
+      <input type="number" id="setTotalWeeks" min="1" max="30">
+    </label>
+    <label class="frow mini">教师名校对只保存在本机浏览器。</label>
+    <div class="btnrow">
+      <button class="pill primary" id="saveSettings">保存</button>
+      <button class="pill" id="resetTeacherFix">清除教师校对</button>
+    </div>
+  </div>
+</div>
+
+<script src="./timetable-core.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>

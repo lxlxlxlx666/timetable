@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1c4770"/>
+      <stop offset="1" stop-color="#0a2038"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
+  <!-- 网格: 7 列 -->
+  <g stroke="#ffffff" stroke-opacity="0.14" stroke-width="6">
+    <line x1="73" y1="90"  x2="73" y2="440"/>
+    <line x1="136" y1="90" x2="136" y2="440"/>
+    <line x1="199" y1="90" x2="199" y2="440"/>
+    <line x1="262" y1="90" x2="262" y2="440"/>
+    <line x1="325" y1="90" x2="325" y2="440"/>
+    <line x1="388" y1="90" x2="388" y2="440"/>
+    <line x1="451" y1="90" x2="451" y2="440"/>
+  </g>
+  <g stroke="#ffffff" stroke-opacity="0.14" stroke-width="6">
+    <line x1="60" y1="90" x2="464" y2="90"/>
+    <line x1="60" y1="177" x2="464" y2="177"/>
+    <line x1="60" y1="264" x2="464" y2="264"/>
+    <line x1="60" y1="351" x2="464" y2="351"/>
+    <line x1="60" y1="440" x2="464" y2="440"/>
+  </g>
+  <!-- 高亮块(今天的课) -->
+  <rect x="147" y="103" width="54" height="60" rx="10" fill="#f5b93c"/>
+  <rect x="210" y="103" width="54" height="60" rx="10" fill="#f5b93c" fill-opacity="0.55"/>
+  <rect x="273" y="103" width="54" height="60" rx="10" fill="#f5b93c" fill-opacity="0.55"/>
+  <rect x="84" y="190" width="54" height="60" rx="10" fill="#ffffff" fill-opacity="0.16"/>
+</svg>
